@@ -1,107 +1,86 @@
-# 🖼️ Discord Meme Bot
+# 🤖 AskMeBot — The Free AI Assistant for Discord
 
-A lightweight Discord bot that fetches fresh memes using the Meme API and sends them directly into your Discord server.  
-Built using **discord.py**, **requests**, and basic Python event handling.
+AskMeBot is a powerful, lightweight, *completely free* AI Discord bot built using:
+- Slash Commands (`/ask`, `/image`, `/joke`, `/meme`, etc.)
+- OpenRouter
+- Meme API
+- Conversation memory (remembers last 5 messages)
+- AI Image Generation
 
----
-# 🎉 Discord Meme Bot
-
-A simple and lightweight Discord bot that sends random memes using the Meme API.  
-Built with **discord.py** and **requests**.
+Perfect for fun servers, study groups, coding servers, or general use.
 
 ---
 
 ## 🚀 Features
-- Fetches high-quality, real-time memes from the Meme API
-- REST API integration via `requests`
-- JSON parsing & URL extraction for meme delivery
-- Responds instantly when users type `sendMeme`
-- Simple and readable code 
-- Lightweight bot with zero unnecessary dependencies
-- Easy to extend with more commands or APIs
-- Fail-safe meme fetching with graceful error handling
+- **/ask** — Ask anything, get smart AI replies  
+- **/image** — Generate AI images from prompts  
+- **/joke** — Get a short funny AI-generated joke  
+- **/fact** — Random interesting facts  
+- **/write** — Generate paragraphs on any topic  
+- **/meme** — Sends a random meme from Reddit  
+- **Conversation Memory** — Bot remembers last 5 interactions  
+- **Fast Slash Commands** — Modern and clean UX  
+- 100% **FREE**
 
 ---
 
 ## 📦 Installation
 
-1. **Clone this repository**
-   ```
-   git clone https://github.com/shlokkokk/discord-meme-bot.git
-   cd discord-meme-bot
-   ```
+Clone the repo:
 
-2. **Install dependencies**
-   ```
-   pip install discord requests
-   ```
+```bash
+git clone https://github.com/yourusername/discord-AskMeBot.git
+cd discord-AskMeBot
+```
+
+Install dependencies:
+
+```bash
+pip install discord requests
+```
 
 ---
 
 ## 🔧 Setup
 
-1. Open **bot.py**
-2. Replace this line:
+1. Go to **Discord Developer Portal**
+2. Create New Application → Add Bot
+3. Turn ON:
+   - Public Bot
+   - Message Content (optional)
+4. Get your **Bot Token**
+5. Make a free OpenRouter account → get your **API key**
 
-   ```python
-   client.run('YOUR_BOT_TOKEN')
-   ```
+Place them in your `bot.py`:
 
-   with your actual **Discord bot token**  
-   ## 🔑 Getting Your Discord Bot Token
-
-    1. Go to the **Discord Developer Portal**  
-        https://discord.com/developers/applications
-
-    2. Create a **New Application** → go to the **Bot** tab
-
-    3. Click **Reset Token** → copy your token
-
-    4. Paste it inside `bot.py`:
-
-        ```python
-        client.run("YOUR_BOT_TOKEN")
-        ```
-
-    ⚠️ **Never share your token or commit it to GitHub.**
-
-
-3. Make sure your bot has:
-   - **Message Content Intent** enabled in Developer Portal
-   - Permission to send messages in your server
+```python
+OPENROUTER_KEY = "your_openrouter_key"
+client.run("your_discord_bot_token")
+```
 
 ---
 
 ## ▶️ Running the Bot
 
-Run:
-
-```
+```bash
 python bot.py
 ```
 
-You should see:
-
-```
-Logged on as randomMEME#$$$$!
-```
-
-Then in Discord, type:
-
-```
-sendMeme
-```
-
-Your bot will send a meme 😎
-
 ---
 
-## 🧠 How It Works
-- Listens for messages using Discord's event system  
-- Fetches memes from the Meme API through a simple `get_meme()` function  
-- Extracts the meme URL from the API’s JSON response  
-- Sends the meme when users type `sendMeme`  
-- Includes basic error handling for safer API responses  
+## 📘 Slash Commands
+
+AskMeBot supports:
+
+| Command | Description |
+|---------|-------------|
+| `/ask question:<text>` | Ask AI anything |
+| `/image prompt:<text>` | Generate an AI image |
+| `/joke` | AI joke |
+| `/fact` | Random fact |
+| `/write topic:<text>` | Write a paragraph |
+| `/meme` | Random meme |
+| `/help` | Show all commands |
 
 ---
 
