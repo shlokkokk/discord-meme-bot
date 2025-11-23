@@ -2,9 +2,12 @@ import discord
 from discord import app_commands
 import requests
 from collections import deque   # for memory
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
-OPENROUTER_KEY = "YOUR_OPENROUTER_KEY_HERE"
+OPENROUTER_KEY = os.getenv("OPENROUTER_KEY")
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
@@ -136,4 +139,4 @@ async def meme_cmd(interaction: discord.Interaction):
     await interaction.followup.send(get_meme())
 
 
-client.run("YOUR_DISCORD_BOT_TOKEN_HERE")   
+client.run(os.getenv("DISCORD_TOKEN"))

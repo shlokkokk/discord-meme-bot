@@ -26,45 +26,71 @@ Perfect for fun servers, study groups, coding servers, or general use.
 
 ## 📦 Installation
 
-Clone the repo:
+Clone the repository:
 
 ```bash
 git clone https://github.com/yourusername/discord-AskMeBot.git
 cd discord-AskMeBot
 ```
 
-Install dependencies:
+Install required packages:
 
 ```bash
-pip install discord requests
+pip install -r requirements.txt
 ```
 
 ---
 
+
 ## 🔧 Setup
 
-1. Go to **Discord Developer Portal**
-2. Create New Application → Add Bot
-3. Turn ON:
-   - Public Bot
-   - Message Content (optional)
-4. Get your **Bot Token**
-5. Make a free OpenRouter account → get your **API key**
+### 1️⃣ Create a `.env` file  
+In the project folder, create a file named **.env** and add:
 
-Place them in your `bot.py`:
-
-```python
-OPENROUTER_KEY = "your_openrouter_key"
-client.run("your_discord_bot_token")
 ```
+OPENROUTER_KEY=your_openrouter_key
+DISCORD_TOKEN=your_discord_bot_token
+```
+
+---
+
+### 2️⃣ Configure Discord Bot
+1. Open **Discord Developer Portal**  
+2. Create New Application → Add Bot  
+3. Enable:
+   - **Public Bot**
+   - **Message Content Intent** (optional but safe)  
+4. Copy your **Bot Token**  
+
+---
+
+### 3️⃣ OpenRouter Setup
+1. Go to **https://openrouter.ai/**
+2. Create a free account  
+3. Generate an API key  
+4. Paste it into `.env`  
 
 ---
 
 ## ▶️ Running the Bot
 
+### (Optional) Activate your virtual environment:
+```bash
+.\.venv\Scripts\activate
+```
+
+Start the bot:
 ```bash
 python bot.py
 ```
+
+If everything is correct, you’ll see:
+
+```
+Logged in as AskMeBot!
+```
+
+Slash commands will automatically appear in your Discord server.
 
 ---
 
