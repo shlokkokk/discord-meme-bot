@@ -12,7 +12,6 @@ conversation_history = deque(maxlen=5)
 
 
 def ask_ai(prompt):
-    # Add user message to memory
     conversation_history.append({"role": "user", "content": prompt})
 
     headers = {
@@ -20,7 +19,6 @@ def ask_ai(prompt):
         "Content-Type": "application/json"
     }
 
-    # Combine memory into messages list
     data = {
         "model": "qwen/qwen-2.5-7b-instruct",
         "messages": list(conversation_history)
@@ -31,7 +29,6 @@ def ask_ai(prompt):
     try:
         reply = res["choices"][0]["message"]["content"]
 
-        # Save bot reply to memory
         conversation_history.append({"role": "assistant", "content": reply})
 
         return reply
