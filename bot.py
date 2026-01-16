@@ -85,7 +85,7 @@ client = AskMeBot()
 @client.tree.command(name="help", description="Show all commands")
 async def help_cmd(interaction: discord.Interaction):
     help_text = (
-        "**🤖 AskMeBot — Your Discord AI Assistant**\n\n"
+        "** AskMeBot — Your Discord AI Assistant**\n\n"
         "**Commands:**\n"
         "• `/ask question:<text>` — Ask the AI anything\n"
         "• `/image prompt:<text>` — Generate an AI image\n"
